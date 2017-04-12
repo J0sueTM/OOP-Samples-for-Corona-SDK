@@ -1,0 +1,98 @@
+settings =
+{
+	orientation =
+	{
+		default = "portrait",
+		supported = { "portrait" }
+	},
+	iphone =
+	{
+		plist =
+		{
+            UIApplicationExitsOnSuspend = true, -- uncomment to quit app on suspend
+			CFBundleIconFile = "Icon.png",
+			CFBundleIconFiles =
+			{
+                "Icon.png",
+                "Icon@2x.png",
+                "Icon-60.png",
+                "Icon-60@2x.png",
+                "Icon-72.png",
+                "Icon-72@2x.png",
+                "Icon-76.png",
+                "Icon-76@2x.png",
+                "Icon-Small.png",
+                "Icon-Small@2x.png",
+                "Icon-Small-40.png",
+                "Icon-Small-40@2x.png",
+                "Icon-Small-50.png",
+                "Icon-Small-50@2x.png",
+			},
+            NSLocationWhenInUseUsageDescription = "A description to the user of why you need access to location services.",
+            CFBundleIdentifier = "com.appledts.GKTapper",  -- Apple's Game Center test bed
+		},
+	},
+   	android =
+	{
+        permissions =
+		{
+			{ name = ".permission.C2D_MESSAGE", protectionLevel = "signature" },
+		},
+		usesPermissions =
+		{
+            "com.android.vending.BILLING",
+			-- Required by the MapView to fetch its contents from the Google Maps servers.
+			"android.permission.INTERNET",
+
+			-- Optional permission used to display current location via the GPS.
+			"android.permission.ACCESS_FINE_LOCATION",
+
+			-- Optional permission used to display current location via WiFi or cellular service.
+			"android.permission.ACCESS_COARSE_LOCATION",
+            --"android.permission.GET_ACCOUNTS",
+			"android.permission.RECEIVE_BOOT_COMPLETED",
+			--"com.google.android.c2dm.permission.RECEIVE",
+			--".permission.C2D_MESSAGE",
+            --"android.permission.RECORD_AUDIO",
+            "android.permission.READ_EXTERNAL_STORAGE",
+            --"android.permission.CAMERA",
+			"android.permission.WRITE_EXTERNAL_STORAGE",
+		},
+		usesFeatures =
+		{
+			-- If you set permissions "ACCESS_FINE_LOCATION" and "ACCESS_COARSE_LOCATION" above,
+			-- then you might want to set up your app to not require location services as follows.
+			-- Otherwise, devices that do not have location sevices (such as a GPS) will be unable
+			-- to purchase this app in the app store.
+			{ name = "android.hardware.location", required = false },
+			--{ name = "android.hardware.location.gps", required = false },
+			--{ name = "android.hardware.location.network", required = false },
+            --{ name = "android.hardware.camera", required = true },
+			--{ name = "android.hardware.camera.front", required = false },
+		},
+        facebookAppId = "XXXXXXXXXXXXXXX"
+	},
+    plugins =
+	{
+    	["plugin.google.iap.v3"] =
+		{
+			publisherId = "com.coronalabs",
+			supportedPlatforms = { android=true }
+		},
+		["plugin.notifications"] =
+		{
+			publisherId = "com.coronalabs"
+		},
+        ["CoronaProvider.gameNetwork.apple"] =
+        {
+            publisherId = "com.coronalabs",
+            supportedPlatforms = { iphone=true },
+        },
+        ["plugin.facebook.v4"] =
+        {
+            publisherId = "com.coronalabs",
+            supportedPlatforms={iphone=true, android=true, osx=true, win32=false},
+        },
+	},
+
+}
