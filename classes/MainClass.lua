@@ -119,6 +119,9 @@ function MainClass:new()
 
     function private.onButtonSupportUs(event)
         local supportUs = SupportUs:new()
+        
+        supportUs:addEventListener("touch", function() return true end)
+        supportUs:addEventListener("tap", function() return true end)
 
         supportUs:addEventListener("EXITSUPPORTUS", function()
             this:remove(supportUs)
@@ -131,6 +134,9 @@ function MainClass:new()
 
     function private.onButtonInfo(event)
         local info = Info:new(facebookMessenger)
+        
+        info:addEventListener("touch", function() return true end)
+        info:addEventListener("tap", function() return true end)
 
         info:addEventListener("EXITINFO", function()
             this:remove(info)
