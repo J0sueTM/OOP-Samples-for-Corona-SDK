@@ -1,4 +1,4 @@
-# OOP-Samples-for-Corona-SDK
+# OOP Samples for Corona SDK
 App inspired by original Corona SDK samples, rewritten as object oriented programming code with upgraded graphic assets.
 
 Google Play Store: https://play.google.com/store/apps/details?id=com.gmail.lis.a.sebastian.oopsamplesforcoronasdk
